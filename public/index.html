@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wetter-App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Wetter-App</h1>
+    <input type="text" id="stadtInput" placeholder="Stadt eingeben">
+    <button onclick="wetterAbfragen()">Wetter abfragen</button>
+    <p id="wetterInfo"></p>
+
+    <script>
+        async function wetterAbfragen() {
+            const stadt = document.getElementById('stadtInput').value;
+            const response = await fetch(`/wetter/${stadt}`);
+            const data = await response.json();
+            document.getElementById('wetterInfo').textContent = `In ${stadt}: ${data.weather[0].description}, Temperatur: ${data.main.temp}°C, Windgeschwindigkeit:${data.wind.speed}`;
+        }
+    </script>
+</body>
+
+</html>

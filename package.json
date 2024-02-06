@@ -1,0 +1,17 @@
+{
+  "name": "wetter-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Barbara Brugger",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
+}
